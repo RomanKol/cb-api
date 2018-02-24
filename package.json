@@ -1,0 +1,16 @@
+{
+  "name": "cb-api",
+  "version": "1.0.0",
+  "description": "rest api documentation for the cryptobox api",
+  "dependencies": {
+    "aglio": "^2.2.1",
+    "browser-sync": "^2.12.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "aglio -i api.apib -o index.html"
+  },
+  "author": "Roman Kollatschny",
+  "license": "MIT"
+}
