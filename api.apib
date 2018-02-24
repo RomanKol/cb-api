@@ -1,0 +1,193 @@
+FORMAT: 1A
+
+# CB
+
+
+# Group Account
+Create and Login into your Account
+
+## Account [/account]
+
+### Create a new account [POST]
+
++ Request (application/json)
+
+        {
+            "mail": "your@domain.mail",
+            "password": "secret"
+        }
+
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+              "id": "someID",
+              "mail": "your@domain.mail",
+              "token": "someGeneratedToken"
+            }
+
+
+## Login [/account/_login]
+
+### Login with your credentials [POST]
+
++ Request (application/json)
+
+        {
+            "mail": "your@domain.mail",
+            "password": "secret"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+              "id": "someID",
+              "mail": "your@domain.mail",
+              "token": "someGeneratedToken"
+            }
+
+# Group Boxes
+Create and update your boxes
+
+## Boxes [/boxes]
+
+### Get all your boxes [GET]
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": "String",
+                "title": "String",
+                "message": "String",
+                "revealDate?": "Date",
+                "password?": "String"
+            }
+
+
+### Create a new box [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token
+
+    + Body
+
+            {
+                "title": "String",
+                "message": "String",
+                "revealDate?": "Date",
+                "password?": "String"
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /boxes/{id}
+
+    + Body
+
+            {
+                "id": "String",
+                "title": "String",
+                "message": "String",
+                "revealDate?": "Date",
+                "password?": "String"
+            }
+
+
+## Specific box [/boxes/{id}]
+
++ Parameters
+
+    + id (string) - Id of the Box
+
+
+### Get a box [GET]
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": "String",
+                "title": "String",
+                "message": "String",
+                "revealDate?": "Date",
+                "password?": "String"
+            }
+
+
+### Update a box [PATCH]
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token
+
+    + Body
+
+            {
+                "title?": "String",
+                "message?": "String",
+                "revealDate?": "Date",
+                "password?": "String"
+            }
+
++ Response 204 (application/json)
+
+    + Headers
+
+            Location: /boxes/{id}
+
+    + Body
+
+            {
+                "id": "String",
+                "title": "String",
+                "message": "String",
+                "revealDate?": "Date",
+                "password?": "String"
+            }
+
+# Group Suggestions
+User and visitor suggestions
+
+## Suggestions [/suggestions]
+
+### Create a Suggestion [POST]
+
++ Request (application/json)
+
+        {
+            "user": Boolean,
+            "url": "URI",
+            "browser": "String",
+            "message": "String"
+        }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "user": Boolean,
+                "url": "URI",
+                "browser": "String",
+                "message": "String"
+            }
