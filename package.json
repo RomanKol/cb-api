@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "rest api documentation for the cryptobox api",
   "dependencies": {
-    "aglio": "^2.2.1",
+    "aglio": "^2.2.1"
   },
   "devDependencies": {},
   "scripts": {
